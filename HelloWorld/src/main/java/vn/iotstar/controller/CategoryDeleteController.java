@@ -1,0 +1,29 @@
+package vn.iotstar.controller;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import vn.iotstar.service.CategoryService;
+import vn.iotstar.service.impl.CategoryServiceImpl;
+
+@WebServlet(urlPatterns = { "/admin/category/delete" })
+
+public class CategoryDeleteController extends HttpServlet {
+
+	private static final long serialVersionUID = -5344387932888532664L;
+	CategoryServiceImpl cateService = new CategoryServiceImpl();
+
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String id = req.getParameter("id");
+		CategoryService.delete(Integer.parseInt(id));
+		resp.sendRedirect(req.getContextPath() + "/admin/category/list");
+	}
+	
+
+}

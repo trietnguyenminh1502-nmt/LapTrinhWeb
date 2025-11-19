@@ -3,9 +3,12 @@ package vn.iotstar.config;
 import java.io.IOException; 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException; 
+import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level; 
-import java.util.logging.Logger; 
+import java.util.logging.Logger;
+
+import vn.iotstar.model.Category; 
 
 public class DBSQLServerConnect {
     
@@ -44,4 +47,44 @@ public class DBSQLServerConnect {
             e.printStackTrace();
         }
     }
+
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void edit1(Category category) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public List<Category> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void insert(Category category) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Category get(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void edit(Category category) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Category get(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Category> search(String keyword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
