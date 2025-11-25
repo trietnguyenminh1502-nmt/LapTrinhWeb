@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>ĐĂNG NHẬP HỆ THỐNG</h2>
+    <h3 th:text="${mess}" style="color:red"></h3>
+    <form action="/login" method="post">
+        Username: <input type="text" name="username"> <br><br>
+        Password: <input type="password" name="password"> <br><br>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

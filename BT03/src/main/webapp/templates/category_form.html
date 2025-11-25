@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>Nhập thông tin Category</h2>
+    <form th:action="@{'/' + ${roleUrl} + '/save'}" th:object="${category}" method="post">
+        <input type="hidden" th:field="*{id}">
+        Tên Category: <input type="text" th:field="*{name}" required>
+        <button type="submit">Lưu lại</button>
+    </form>
+    <br>
+    <a th:href="@{'/' + ${roleUrl} + '/home'}">Quay lại</a>
+
+</body>
+</html>

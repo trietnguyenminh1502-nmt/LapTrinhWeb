@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 th:text="'Trang chủ dành cho: ' + ${roleUrl}"></h1>
+    
+    <a th:href="@{'/' + ${roleUrl} + '/add'}">Thêm Category mới</a> | 
+    <a href="/logout">Đăng xuất</a>
+
+    <table border="1" cellpadding="10" style="margin-top: 20px;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên Category</th>
+                <th>Người tạo</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="c : ${listCate}">
+                <td th:text="${c.id}"></td>
+                <td th:text="${c.name}"></td>
+                <td th:text="${c.user.username}"></td>
+                <td>
+                    <a th:href="@{'/' + ${roleUrl} + '/delete/' + ${c.id}}" 
+                       onclick="return confirm('Bạn chắc chắn muốn xóa?')">Xóa</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
